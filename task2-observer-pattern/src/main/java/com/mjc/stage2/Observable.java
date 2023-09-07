@@ -1,9 +1,9 @@
 package com.mjc.stage2;
 
 public interface Observable {
-    void addObserver(Observer o);
+    void addObserver(Observer observer);
 
-    void removeObserver(Observer o);
+    void removeObserver(Observer observer);
 
     void notifyObserver();
 }
