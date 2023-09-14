@@ -1,21 +1,26 @@
 package com.mjc.stage2.parser;
 
-import java.util.ArrayList;
-import java.util.List;
+import com.mjc.stage2.exception.ParserBuildingException;
+
+import java.util.*;
 
 public class ChainParserBuilder {
-    private List<AbstractTextParser> parsers = new ArrayList<>();
+    private final Deque<AbstractTextParser> parsers = new ArrayDeque<>();
 
     public ChainParserBuilder() {
     }
 
-    public ChainParserBuilder setParser(AbstractTextParser abstractTextParser) {
-        // Write your code here!
+    public ChainParserBuilder setParser(AbstractTextParser successor) {
+        Optional.ofNullable(parsers.peekLast())
+                .ifPresent(lastAddedParser -> lastAddedParser.setNextParser(successor));
+        parsers.addLast(successor);
         return this;
     }
 
     public AbstractTextParser build() {
-        // Write your code here!
-        return null;
+        if (parsers.isEmpty()) {
+            throw new ParserBuildingException("None of the parsers were attached.");
+        }
+        return parsers.getFirst();
     }
 }

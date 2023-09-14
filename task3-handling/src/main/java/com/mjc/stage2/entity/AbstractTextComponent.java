@@ -1,8 +1,11 @@
 package com.mjc.stage2.entity;
 
+import lombok.AccessLevel;
+import lombok.Getter;
+
 public abstract class AbstractTextComponent {
-    protected TextComponentType componentType;
-    private int size;
+    @Getter(AccessLevel.PUBLIC)
+    protected final TextComponentType componentType;
 
     public AbstractTextComponent(TextComponentType componentType) {
         this.componentType = componentType;
@@ -13,10 +16,6 @@ public abstract class AbstractTextComponent {
     public abstract void add(AbstractTextComponent textComponent);
 
     public abstract void remove(AbstractTextComponent textComponent);
-
-    public TextComponentType getComponentType() {
-        return componentType;
-    }
 
     public abstract int getSize();
 }
