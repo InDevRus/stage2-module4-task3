@@ -23,7 +23,7 @@ public class Rectangle implements Observable {
         this.id = id;
         this.sideA = sideA;
         this.sideB = sideB;
-        this.observers.add(RectangleObserver.getInstance());
+        this.observers.add(new RectangleObserver());
     }
 
     public void setId(int id) {
