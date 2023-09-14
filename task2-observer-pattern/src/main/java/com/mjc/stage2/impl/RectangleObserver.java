@@ -7,19 +7,19 @@ import lombok.Synchronized;
 
 
 public class RectangleObserver implements Observer {
-//    private static final RectangleWarehouse warehouse = RectangleWarehouse.getInstance();
-//
-//    private static class RectangleObserverHolder {
-//        private static final RectangleObserver instance = new RectangleObserver();
-//    }
-//
-//    private RectangleObserver() {
-//
-//    }
-//
-//    public static RectangleObserver getInstance() {
-//        return RectangleObserverHolder.instance;
-//    }
+    private static final RectangleWarehouse warehouse = RectangleWarehouse.getInstance();
+
+    private static class RectangleObserverHolder {
+        private static final RectangleObserver instance = new RectangleObserver();
+    }
+
+    private RectangleObserver() {
+
+    }
+
+    public static RectangleObserver getInstance() {
+        return RectangleObserverHolder.instance;
+    }
 
     @Synchronized
     @Override

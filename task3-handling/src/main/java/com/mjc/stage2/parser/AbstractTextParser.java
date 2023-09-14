@@ -5,10 +5,10 @@ import com.mjc.stage2.entity.AbstractTextComponent;
 public abstract class AbstractTextParser {
     protected AbstractTextParser nextParser;
 
-    public AbstractTextParser() {
+    protected AbstractTextParser() {
     }
 
-    public AbstractTextParser(AbstractTextParser nextParser) {
+    protected AbstractTextParser(AbstractTextParser nextParser) {
         this.nextParser = nextParser;
     }
 

@@ -9,7 +9,7 @@ import com.mjc.stage2.entity.TextComponentType;
 import java.util.regex.Pattern;
 
 public class WordParser extends AbstractTextParser {
-    private static final String WORD_REGEX = "((?:[\\w-'=():]|[.!?])+,?)\\s?";
+    private static final String WORD_REGEX = "([\\w-'=():.!?]+,?)\\s?";
     public static final Pattern WORD_PATTERN = Pattern.compile(WORD_REGEX, Pattern.MULTILINE);
 
     @Override

@@ -12,10 +12,8 @@ public class FileValidatorImpl implements FileValidator {
         }
         boolean flag = false;
         File file = new File(path);
-        if (file.exists()) {
-            if (file.length() > 0) {
-                flag = true;
-            }
+        if (file.exists() && file.length() > 0) {
+            flag = true;
         }
         return flag;
     }

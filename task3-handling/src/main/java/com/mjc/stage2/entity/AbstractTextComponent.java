@@ -7,7 +7,7 @@ public abstract class AbstractTextComponent {
     @Getter(AccessLevel.PUBLIC)
     protected final TextComponentType componentType;
 
-    public AbstractTextComponent(TextComponentType componentType) {
+    protected AbstractTextComponent(TextComponentType componentType) {
         this.componentType = componentType;
     }
 

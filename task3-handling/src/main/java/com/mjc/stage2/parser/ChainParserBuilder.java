@@ -1,14 +1,14 @@
 package com.mjc.stage2.parser;
 
 import com.mjc.stage2.exception.ParserBuildingException;
+import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
 
 import java.util.*;
 
+@NoArgsConstructor(access = AccessLevel.PUBLIC)
 public class ChainParserBuilder {
     private final Deque<AbstractTextParser> parsers = new ArrayDeque<>();
-
-    public ChainParserBuilder() {
-    }
 
     public ChainParserBuilder setParser(AbstractTextParser successor) {
         Optional.ofNullable(parsers.peekLast())
