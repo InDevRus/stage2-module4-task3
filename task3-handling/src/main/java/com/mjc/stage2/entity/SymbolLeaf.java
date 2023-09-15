@@ -4,6 +4,8 @@ import com.mjc.stage2.exception.HandlingException;
 import lombok.AccessLevel;
 import lombok.Getter;
 
+import java.util.stream.Stream;
+
 public class SymbolLeaf extends AbstractTextComponent {
     @Getter(AccessLevel.PUBLIC)
     private final char value;
@@ -16,6 +18,11 @@ public class SymbolLeaf extends AbstractTextComponent {
     @Override
     public String operation() {
         return String.valueOf(value);
+    }
+
+    @Override
+    protected Stream<String> streamForJoining() {
+        return Stream.of(operation());
     }
 
     @Override

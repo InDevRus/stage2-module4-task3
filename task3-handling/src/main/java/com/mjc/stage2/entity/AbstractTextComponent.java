@@ -3,6 +3,9 @@ package com.mjc.stage2.entity;
 import lombok.AccessLevel;
 import lombok.Getter;
 
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
 public abstract class AbstractTextComponent {
     @Getter(AccessLevel.PUBLIC)
     protected final TextComponentType componentType;
@@ -11,7 +14,11 @@ public abstract class AbstractTextComponent {
         this.componentType = componentType;
     }
 
-    public abstract String operation();
+    public String operation() {
+        return streamForJoining().collect(Collectors.joining());
+    }
+
+    protected abstract Stream<String> streamForJoining();
 
     public abstract void add(AbstractTextComponent textComponent);
 
